@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/tests\/Post[1.1:15]","start":1653903494948,"end":1653903495292,"title":"src\/test\/java\/tests\/Post[1.1:15] 11:38:14.948-11:38:15.292 Post1","className":"failed"},{"id":2,"group":1,"content":"src\/test\/java\/tests\/Post[1.2:16]","start":1653903495302,"end":1653903495305,"title":"src\/test\/java\/tests\/Post[1.2:16] 11:38:15.302-11:38:15.305 Post1","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/tests\/Post[1.3:17]","start":1653903495311,"end":1653903495313,"title":"src\/test\/java\/tests\/Post[1.3:17] 11:38:15.311-11:38:15.313 Post1","className":"failed"},{"id":4,"group":1,"content":"src\/test\/java\/tests\/Post[1.4:18]","start":1653903495321,"end":1653903495323,"title":"src\/test\/java\/tests\/Post[1.4:18] 11:38:15.321-11:38:15.323 Post1","className":"failed"},{"id":5,"group":1,"content":"src\/test\/java\/tests\/Post[1.5:19]","start":1653903495330,"end":1653903495333,"title":"src\/test\/java\/tests\/Post[1.5:19] 11:38:15.330-11:38:15.333 Post1","className":"failed"},{"id":6,"group":1,"content":"src\/test\/java\/tests\/Post[1.6:20]","start":1653903495341,"end":1653903495344,"title":"src\/test\/java\/tests\/Post[1.6:20] 11:38:15.341-11:38:15.344 Post1","className":"failed"},{"id":7,"group":1,"content":"src\/test\/java\/tests\/Post[1.7:21]","start":1653903495353,"end":1653903495357,"title":"src\/test\/java\/tests\/Post[1.7:21] 11:38:15.353-11:38:15.357 Post1","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
